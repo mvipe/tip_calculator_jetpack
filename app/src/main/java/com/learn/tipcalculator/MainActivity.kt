@@ -3,6 +3,7 @@ package com.learn.tipcalculator
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CornerSize
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -44,7 +45,7 @@ fun MyApp(content:@Composable () -> Unit){
 
 }
 
-@Preview
+
 @Composable
 fun TopHeader(totalPerPerson:Double=0.2345){
     Surface(modifier = Modifier
@@ -65,14 +66,28 @@ fun TopHeader(totalPerPerson:Double=0.2345){
     }
 }
 
-
+@Composable
+@Preview
+fun MainContent(){
+    Surface(modifier = Modifier
+        .padding(2.dp)
+        .fillMaxWidth(), shape =  RoundedCornerShape(corner = CornerSize(12.dp)),
+    border = BorderStroke(width=1.dp, color = Color.LightGray)
+    ) {
+        Column() {
+            Text(text = "Hello")
+            Text(text = "Hello")
+            Text(text = "Hello")
+        }
+    }
+}
 
 @Composable
 fun Greeting(name: String) {
     Text(text = "Hello $name!")
 }
 
-@Preview(showBackground = true)
+
 @Composable
 fun DefaultPreview() {
     TipCalculatorTheme() {
